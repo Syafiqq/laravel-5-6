@@ -1,4 +1,3 @@
-
 window._ = require('lodash');
 
 /**
@@ -7,11 +6,14 @@ window._ = require('lodash');
  * code may be modified to fit the specific needs of your application.
  */
 
-try {
+try
+{
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap-sass');
-} catch (e) {}
+} catch (e)
+{
+}
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -31,9 +33,11 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 let token = document.head.querySelector('meta[name="csrf-token"]');
 
-if (token) {
+if (token)
+{
     window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
-} else {
+} else
+{
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 
